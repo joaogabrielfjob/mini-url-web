@@ -8,10 +8,6 @@ let loader = document.getElementById('loader')
 let toast = document.getElementById('toast')
 let toastContent = document.getElementById('toast-content')
 
-window.addEventListener("popstate", e =>
-  console.log(new URL(window.location.href).pathname)
-);
-
 form.addEventListener('submit', (e) => {
   e.preventDefault()
 
@@ -58,7 +54,6 @@ const handle = async (url) => {
 
   showToast('Unable to minify your URL', 'toast-red')
 }
-
 
 const showToast = (message, color) => {
   toast.classList.add(color)
