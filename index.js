@@ -34,6 +34,13 @@ const handle = async (url) => {
   button.classList.add('hide')
   loader.classList.remove('hide')
 
+  if (url.includes('miniurl.joaojob.dev')) {
+    input.readOnly = false
+    loader.classList.add('hide')
+    copy.classList.remove('hide')
+    return
+  }
+
   const response = await minify(url)
 
   input.readOnly = false
